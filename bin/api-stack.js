@@ -2,6 +2,11 @@
 
 const { App } = require("aws-cdk-lib");
 const { ApiStack } = require("../lib/api-stack-stack");
+const dotenv = require("dotenv");
+const path = require("path");
+
+// 1. Configure dotenv to read from our `.env` file
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const app = new App();
 new ApiStack(app, "ApiStack", {
