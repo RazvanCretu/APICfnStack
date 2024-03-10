@@ -1,11 +1,11 @@
-import requests
+from dremio.flight.endpoint import DremioFlightEndpoint
 
 def handler(e,ctx):
-    print(requests.__version__)
+    print(DremioFlightEndpoint)
 
     resp = {
         "statusCode": 200,
-        "body": requests.__version__
+        "body": str("Hello")
     }
 
     return resp
